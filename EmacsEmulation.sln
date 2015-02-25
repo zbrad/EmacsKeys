@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmacsEmulation", "EmacsEmulation.csproj", "{1188A483-4DB0-4484-86A5-A17D58BEBA0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - Combined|Any CPU = Debug - Combined|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Release-DelaySigned|Any CPU = Release-DelaySigned|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Debug - Combined|Any CPU.ActiveCfg = Debug|Any CPU
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Debug - Combined|Any CPU.Build.0 = Debug|Any CPU
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Release-DelaySigned|Any CPU.ActiveCfg = Release|Any CPU
+		{1188A483-4DB0-4484-86A5-A17D58BEBA0C}.Release-DelaySigned|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
