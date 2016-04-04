@@ -63,7 +63,12 @@ namespace Microsoft.VisualStudio.Editor.EmacsEmulation.Commands
             }
             else if (!context.UniversalArgument.HasValue || context.UniversalArgument > 0)
             {
-                for (int count = context.Manager.GetUniversalArgumentOrDefault(1); count > 0; count--)
+                int count = context.Manager.GetUniversalArgumentOrDefault(1);
+                if (count == 1)
+                {
+                    context.EditorOperations.DeleteToEndOfPhysicalLine();
+                }
+                else while (count-- > 0)
                 {
                     int caretPosition = context.TextView.Caret.Position.BufferPosition.Position;
                     int nextLineStart = context.TextView.Caret.ContainingTextViewLine.EndIncludingLineBreak.Position;
