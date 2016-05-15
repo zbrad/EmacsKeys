@@ -57,6 +57,7 @@ namespace Microsoft.VisualStudio.Editor.EmacsEmulation.Commands
                         {
                             // reached end of line and every character was a whitespace
                             context.EditorOperations.Delete(caretPosition, startOfNextLine - caretPosition);
+                            break;
                         }
                     }
                 }
