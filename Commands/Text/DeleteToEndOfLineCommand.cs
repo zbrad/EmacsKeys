@@ -24,7 +24,7 @@ namespace Microsoft.VisualStudio.Editor.EmacsEmulation.Commands
         internal override void Execute(EmacsCommandContext context)
         {
             // we can't use the repeating support because of the special behavior of UniversalArgument=0
-            if (context.Manager.UniversalArgument == 0)
+            if (!context.UniversalArgument.HasValue || context.Manager.UniversalArgument == 0)
             {
                 ITextCaret caret = context.TextView.Caret;
                 int caretPosition = caret.Position.BufferPosition.Position;
@@ -57,18 +57,14 @@ namespace Microsoft.VisualStudio.Editor.EmacsEmulation.Commands
                         {
                             // reached end of line and every character was a whitespace
                             context.EditorOperations.Delete(caretPosition, startOfNextLine - caretPosition);
+                            break;
                         }
                     }
                 }
             }
-            else if (!context.UniversalArgument.HasValue || context.UniversalArgument > 0)
+            else // (context.UniversalArgument > 0)
             {
-                int count = context.Manager.GetUniversalArgumentOrDefault(1);
-                if (count == 1)
-                {
-                    context.EditorOperations.DeleteToEndOfPhysicalLine();
-                }
-                else while (count-- > 0)
+                for (int count = context.Manager.GetUniversalArgumentOrDefault(1); count > 0; count--)
                 {
                     int caretPosition = context.TextView.Caret.Position.BufferPosition.Position;
                     int nextLineStart = context.TextView.Caret.ContainingTextViewLine.EndIncludingLineBreak.Position;
